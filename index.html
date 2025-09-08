@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RUGME - The Rug-Proof Token on Pump.fun</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body { font-family: system-ui, -apple-system, Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; color: #333; line-height: 1.6; }
         header { background: linear-gradient(to right, #0070f3, #005bb5); color: white; padding: 80px 20px; text-align: center; }
@@ -24,7 +25,8 @@
         .features, .marketing { display: flex; flex-wrap: wrap; justify-content: space-between; }
         .feature-item, .marketing-item { flex: 1 1 45%; margin: 20px; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s; }
         .feature-item:hover, .marketing-item:hover { transform: translateY(-5px); }
-        .feature-item img, .marketing-item img { max-width: 100%; height: auto; border-radius: 10px; margin-bottom: 15px; }
+        .icon-container { font-size: 3em; color: #0070f3; background: linear-gradient(to right, #e6f1ff, #ffffff); width: 80px; height: 80px; line-height: 80px; border-radius: 50%; margin: 0 auto 15px; transition: background 0.3s; }
+        .feature-item:hover .icon-container, .marketing-item:hover .icon-container { background: linear-gradient(to right, #0070f3, #005bb5); color: #fff; }
         .feature-item h3, .marketing-item h3 { color: #0070f3; font-size: 1.8em; }
         .cta-section { text-align: center; background: #e6f1ff; padding: 40px; border-radius: 10px; margin: 40px auto; }
         .cta-section h2 { color: #0070f3; font-size: 2em; }
@@ -109,22 +111,22 @@
     <h2>Why $NORUG? Features That Protect</h2>
     <div class="features">
         <div class="feature-item">
-            <img src="https://via.placeholder.com/400x300?text=Rug+Pull+Checker" alt="Rug Pull Checker">
+            <div class="icon-container"><i class="fas fa-shield-alt"></i></div>
             <h3>Rug Pull Checker</h3>
             <p>Analyze Pump.fun tokens for risks like high holder concentration or low liquidity using our Custom Risk Oracle.</p>
         </div>
         <div class="feature-item">
-            <img src="https://via.placeholder.com/400x300?text=Insurance" alt="Insurance">
+            <div class="icon-container"><i class="fas fa-umbrella"></i></div>
             <h3>Insurance Policies</h3>
             <p>Protect investments with $NORUG premiums (min. 1 USDC coverage, up to 90 days).</p>
         </div>
         <div class="feature-item">
-            <img src="https://via.placeholder.com/400x300?text=Staking" alt="Staking">
+            <div class="icon-container"><i class="fas fa-coins"></i></div>
             <h3>Staking Rewards</h3>
             <p>Stake $NORUG (min. 100 tokens) to earn hourly rewards with a 7-day lockup.</p>
         </div>
         <div class="feature-item">
-            <img src="https://via.placeholder.com/400x300?text=Lotteries" alt="Lotteries">
+            <div class="icon-container"><i class="fas fa-ticket-alt"></i></div>
             <h3>Community Lotteries</h3>
             <p>Win big with fair, Chainlink VRF-powered lotteries (50% 1st prize, min. 100 $NORUG).</p>
         </div>
@@ -136,22 +138,22 @@
     <p>RUGME isn’t just a token—it’s a movement to make DeFi safer and more rewarding. Here’s why investors love us:</p>
     <div class="features">
         <div class="marketing-item">
-            <img src="https://via.placeholder.com/400x300?text=Community" alt="Community">
+            <div class="icon-container"><i class="fas fa-users"></i></div>
             <h3>Vibrant Community</h3>
             <p>Join 10,000+ holders in our active Discord and Twitter communities, driving memes and engagement.</p>
         </div>
         <div class="marketing-item">
-            <img src="https://via.placeholder.com/400x300?text=Anti-Rug" alt="Anti-Rug">
+            <div class="icon-container"><i class="fas fa-lock"></i></div>
             <h3>Anti-Rug Mission</h3>
             <p>Backed by NoRug Protocol, we protect your investments with cutting-edge risk analysis and insurance.</p>
         </div>
         <div class="marketing-item">
-            <img src="https://via.placeholder.com/400x300?text=Growth" alt="Growth">
+            <div class="icon-container"><i class="fas fa-chart-line"></i></div>
             <h3>Investment Potential</h3>
             <p>Buybacks, burns, and lotteries boost $NORUG value, with a 1B token cap ensuring scarcity.</p>
         </div>
         <div class="marketing-item">
-            <img src="https://via.placeholder.com/400x300?text=Marketing" alt="Marketing">
+            <div class="icon-container"><i class="fas fa-bullhorn"></i></div>
             <h3>Viral Marketing</h3>
             <p>From X campaigns to global ads, our partnerships and AMAs keep RUGME trending.</p>
         </div>
@@ -179,7 +181,7 @@
        <strong>Twitter:</strong> <a href="https://x.com/NoRugProtocol">@NoRugProtocol</a><br>
        <strong>Discord:</strong> <a href="https://discord.gg/norug">NoRug Protocol Community</a></p>
     <a href="mailto:info@norug.life" class="cta-button">Contact Us</a>
-</header>
+</section>
 
 <footer>
     <p>&copy; 2025 RUGME / NoRug Protocol. All rights reserved.</p>
