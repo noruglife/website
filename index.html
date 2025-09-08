@@ -7,56 +7,89 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body { font-family: system-ui, -apple-system, Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; color: #333; line-height: 1.6; }
-        header { background: linear-gradient(to right, #0070f3, #005bb5); color: white; padding: 80px 20px; text-align: center; }
-        header h1 { font-size: 2.8em; margin: 0; }
-        header p { font-size: 1.4em; margin: 20px 0; max-width: 800px; margin-left: auto; margin-right: auto; }
-        .cta-button { display: inline-block; padding: 15px 30px; background-color: #fff; color: #0070f3; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s, transform 0.3s; }
+        header { background: linear-gradient(to right, #0070f3, #005bb5); color: white; padding: 20px; display: flex; flex-direction: column; align-items: center; position: relative; }
+        .logo { width: 50px; height: 50px; }
+        .logo svg { width: 100%; height: 100%; }
+        header .tagline { margin: 15px 0; max-width: 600px; font-size: 1.2em; }
+        .cta-button { display: inline-block; padding: 12px 25px; background-color: #fff; color: #0070f3; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s, transform 0.3s; }
         .cta-button:hover { background-color: #e6f1ff; transform: translateY(-2px); }
-        nav { background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); padding: 15px 0; position: sticky; top: 0; z-index: 100; }
-        nav ul { list-style: none; padding: 0; text-align: center; margin: 0; }
-        nav ul li { display: inline-block; margin: 0 20px; }
-        nav ul li a { color: #333; text-decoration: none; font-weight: 600; transition: color 0.3s; }
+        nav { background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); padding: 10px 0; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
+        nav ul li { margin: 0; }
+        nav ul li a { color: #333; text-decoration: none; font-weight: 600; padding: 8px 15px; transition: color 0.3s; }
         nav ul li a:hover { color: #0070f3; }
-        section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
-        .stats { display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; background: #fff; border-radius: 10px; padding: 40px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .stat-item { flex: 1; min-width: 200px; margin: 20px; }
-        .stat-item h3 { font-size: 2.2em; color: #0070f3; margin: 0; }
-        .stat-item p { font-size: 1.1em; margin: 5px 0; }
-        .features, .marketing { display: flex; flex-wrap: wrap; justify-content: space-between; }
-        .feature-item, .marketing-item { flex: 1 1 45%; margin: 20px; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s; }
+        .nav-toggle { display: none; font-size: 1.5em; cursor: pointer; padding: 10px; }
+        details[open] .nav-toggle { color: #0070f3; }
+        details summary { list-style: none; }
+        details ul { display: none; }
+        details[open] ul { display: flex; flex-direction: column; align-items: center; padding: 10px 0; }
+        section { padding: 40px 15px; max-width: 1200px; margin: 0 auto; }
+        .stats { display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; background: #fff; border-radius: 10px; padding: 30px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin: 20px 0; }
+        .stat-item { flex: 1; min-width: 150px; margin: 10px; }
+        .stat-item h3 { font-size: 1.8em; color: #0070f3; margin: 0; }
+        .stat-item p { font-size: 1em; margin: 5px 0; }
+        .features, .marketing { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; }
+        .feature-item, .marketing-item { flex: 1 1 45%; min-width: 250px; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s; }
         .feature-item:hover, .marketing-item:hover { transform: translateY(-5px); }
-        .icon-container { font-size: 3em; color: #0070f3; background: linear-gradient(to right, #e6f1ff, #ffffff); width: 80px; height: 80px; line-height: 80px; border-radius: 50%; margin: 0 auto 15px; transition: background 0.3s; }
+        .icon-container { font-size: 2.5em; color: #0070f3; background: linear-gradient(to right, #e6f1ff, #ffffff); width: 70px; height: 70px; line-height: 70px; border-radius: 50%; margin: 0 auto 15px; transition: background 0.3s; }
         .feature-item:hover .icon-container, .marketing-item:hover .icon-container { background: linear-gradient(to right, #0070f3, #005bb5); color: #fff; }
-        .feature-item h3, .marketing-item h3 { color: #0070f3; font-size: 1.8em; }
-        .cta-section { text-align: center; background: #e6f1ff; padding: 40px; border-radius: 10px; margin: 40px auto; }
-        .cta-section h2 { color: #0070f3; font-size: 2em; }
-        footer { background-color: #333; color: white; text-align: center; padding: 20px; font-size: 0.9em; }
-        @media (max-width: 768px) { 
-            header h1 { font-size: 2em; }
-            header p { font-size: 1.2em; }
-            nav ul li { margin: 0 10px; }
+        .feature-item h3, .marketing-item h3 { color: #0070f3; font-size: 1.6em; }
+        .cta-section { text-align: center; background: #e6f1ff; padding: 30px; border-radius: 10px; margin: 30px 0; }
+        .cta-section h2 { color: #0070f3; font-size: 1.8em; }
+        footer { background-color: #333; color: white; text-align: center; padding: 15px; font-size: 0.9em; }
+        @media (max-width: 768px) {
+            header { padding: 15px; }
+            .logo { width: 40px; height: 40px; }
+            header .tagline { font-size: 1em; }
+            .nav-toggle { display: block; }
+            nav ul { display: none; }
+            details[open] ul { display: flex; }
+            nav { padding: 5px 0; }
+            .stats { padding: 20px; }
+            .stat-item { min-width: 120px; }
             .feature-item, .marketing-item { flex: 1 1 100%; }
+            section { padding: 20px 10px; }
+        }
+        @media (min-width: 1200px) {
+            section { padding: 60px 20px; }
+            .stats { padding: 40px; }
+            .stat-item { min-width: 200px; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>RUGME: Don’t Get Rugged, Get Protected!</h1>
-    <p>Join the rug-proof revolution with RUGME, the Pump.fun token migrating to $NORUG on the NoRug Protocol for ultimate DeFi security.</p>
+    <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#0070f3;" />
+                    <stop offset="100%" style="stop-color:#005bb5;" />
+                </linearGradient>
+            </defs>
+            <path d="M50 10 L20 30 Q20 50 30 60 L40 70 Q50 80 60 70 L70 60 Q80 50 80 30 Z" fill="url(#gradient)" />
+            <path d="M45 30 Q50 20 55 30 L50 50 Q45 50 45 30 Z" fill="url(#gradient)" />
+            <text x="50" y="65" font-size="40" text-anchor="middle" fill="url(#gradient)" font-weight="bold">R</text>
+        </svg>
+    </div>
+    <div class="tagline">Join the rug-proof revolution with RUGME, migrating to $NORUG for ultimate DeFi security.</div>
     <a href="https://pump.fun/RUGME" class="cta-button">Buy RUGME Now</a>
 </header>
 
 <nav>
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About RUGME</a></li>
-        <li><a href="#migration">Migration</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#marketing">Why Invest</a></li>
-        <li><a href="#links">Links</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+    <details class="nav-toggle">
+        <summary><i class="fas fa-bars"></i></summary>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About RUGME</a></li>
+            <li><a href="#migration">Migration</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#marketing">Why Invest</a></li>
+            <li><a href="#links">Links</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </details>
 </nav>
 
 <section id="home">
