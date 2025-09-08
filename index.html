@@ -5,114 +5,163 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RUGME - The Rug-Proof Token on Pump.fun</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
-        header { background-color: #007bff; color: white; padding: 20px; text-align: center; }
-        nav { background-color: #333; color: white; padding: 10px; }
-        nav ul { list-style: none; padding: 0; text-align: center; }
-        nav ul li { display: inline; margin: 0 15px; }
-        nav ul li a { color: white; text-decoration: none; }
-        section { padding: 20px; margin: 20px auto; max-width: 1200px; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        footer { background-color: #333; color: white; text-align: center; padding: 10px; }
-        .marketing { background-color: #e9f7ff; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
-        .link-button { display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; margin: 10px 0; }
-        .link-button:hover { background-color: #0056b3; }
+        body { font-family: system-ui, -apple-system, Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; color: #333; line-height: 1.6; }
+        header { background: linear-gradient(to right, #0070f3, #005bb5); color: white; padding: 80px 20px; text-align: center; }
+        header h1 { font-size: 2.8em; margin: 0; }
+        header p { font-size: 1.4em; margin: 20px 0; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .cta-button { display: inline-block; padding: 15px 30px; background-color: #fff; color: #0070f3; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s, transform 0.3s; }
+        .cta-button:hover { background-color: #e6f1ff; transform: translateY(-2px); }
+        nav { background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); padding: 15px 0; position: sticky; top: 0; z-index: 100; }
+        nav ul { list-style: none; padding: 0; text-align: center; margin: 0; }
+        nav ul li { display: inline-block; margin: 0 20px; }
+        nav ul li a { color: #333; text-decoration: none; font-weight: 600; transition: color 0.3s; }
+        nav ul li a:hover { color: #0070f3; }
+        section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
+        .stats { display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; background: #fff; border-radius: 10px; padding: 40px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .stat-item { flex: 1; min-width: 200px; margin: 20px; }
+        .stat-item h3 { font-size: 2.2em; color: #0070f3; margin: 0; }
+        .stat-item p { font-size: 1.1em; margin: 5px 0; }
+        .features, .marketing { display: flex; flex-wrap: wrap; justify-content: space-between; }
+        .feature-item, .marketing-item { flex: 1 1 45%; margin: 20px; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s; }
+        .feature-item:hover, .marketing-item:hover { transform: translateY(-5px); }
+        .feature-item img, .marketing-item img { max-width: 100%; height: auto; border-radius: 10px; margin-bottom: 15px; }
+        .feature-item h3, .marketing-item h3 { color: #0070f3; font-size: 1.8em; }
+        .cta-section { text-align: center; background: #e6f1ff; padding: 40px; border-radius: 10px; margin: 40px auto; }
+        .cta-section h2 { color: #0070f3; font-size: 2em; }
+        footer { background-color: #333; color: white; text-align: center; padding: 20px; font-size: 0.9em; }
+        @media (max-width: 768px) { 
+            header h1 { font-size: 2em; }
+            header p { font-size: 1.2em; }
+            nav ul li { margin: 0 10px; }
+            .feature-item, .marketing-item { flex: 1 1 100%; }
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>RUGME - Don't Get Rugged, Get RUGME!</h1>
-    <p>The Pump.fun Token That's Migrating to NoRug Protocol for Ultimate Rug Pull Protection</p>
+    <h1>RUGME: Don’t Get Rugged, Get Protected!</h1>
+    <p>Join the rug-proof revolution with RUGME, the Pump.fun token migrating to $NORUG on the NoRug Protocol for ultimate DeFi security.</p>
+    <a href="https://pump.fun/RUGME" class="cta-button">Buy RUGME Now</a>
 </header>
 
 <nav>
     <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About RUGME</a></li>
-        <li><a href="#migration">Migration to $NORUG</a></li>
-        <li><a href="#whitepaper">Whitepaper</a></li>
+        <li><a href="#migration">Migration</a></li>
         <li><a href="#features">Features</a></li>
-        <li><a href="#marketing">Marketing</a></li>
-        <li><a href="#links">Links & Socials</a></li>
+        <li><a href="#marketing">Why Invest</a></li>
+        <li><a href="#links">Links</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 
 <section id="home">
     <h2>Welcome to RUGME</h2>
-    <p>RUGME is a fun, community-driven token launched on Pump.fun, the premier platform for Solana token creation. With a playful name that pokes fun at the DeFi world's rug pull risks, RUGME is now evolving into something bigger: a gateway to the NoRug Protocol. Join us as we migrate to $NORUG and protect your investments from rugs!</p>
-    <p>Token Contract Address: (Placeholder: Pump.fun generated CA - e.g., RUGME11111111111111111111111111111111111111)</p>
-    <a href="https://pump.fun/RUGME" class="link-button">Buy RUGME on Pump.fun</a>
+    <p>RUGME is a vibrant meme token launched on Pump.fun, designed to tackle the DeFi world’s rug pull problem with humor and community spirit. As we migrate to $NORUG on the NoRug Protocol, RUGME holders gain access to cutting-edge rug pull protection, insurance, staking, and more. Invest in RUGME today and join a movement to make DeFi safer!</p>
+    <p><strong>Token Contract Address:</strong> (Placeholder: RUGME11111111111111111111111111111111111111)</p>
+    <a href="https://www.norug.life/migrate" class="cta-button">Migrate to $NORUG</a>
+</section>
+
+<section class="stats">
+    <div class="stat-item">
+        <h3>1B</h3>
+        <p>Total $NORUG Supply</p>
+    </div>
+    <div class="stat-item">
+        <h3>10,000+</h3>
+        <p>Community Holders</p>
+    </div>
+    <div class="stat-item">
+        <h3>7 Days</h3>
+        <p>Migration Period</p>
+    </div>
 </section>
 
 <section id="about">
     <h2>About RUGME</h2>
-    <p>RUGME started as a meme token on Pump.fun, designed to highlight the risks of rug pulls in DeFi while building a strong community. With thousands of holders and viral marketing, RUGME quickly gained traction. Now, to provide real value and protection, we're migrating to the NoRug Protocol's $NORUG token.</p>
-    <p>Key Stats:</p>
+    <p>Launched on Pump.fun, RUGME is a community-driven token that started as a playful jab at DeFi rug pulls. With a massive following and viral marketing, it’s now evolving into $NORUG, the backbone of the NoRug Protocol. Built on Solana, $NORUG offers advanced features to protect investors, making RUGME a smart choice for DeFi enthusiasts.</p>
+    <p><strong>Key Details:</strong></p>
     <ul>
-        <li>Total Supply: 1,000,000,000 (Pre-Migration)</li>
-        <li>Platform: Solana via Pump.fun</li>
-        <li>Community: Over 10,000 holders and growing</li>
-        <li>Purpose: Fun meme token turning serious with rug pull insurance</li>
+        <li><strong>Platform:</strong> Solana via Pump.fun</li>
+        <li><strong>Supply:</strong> 1,000,000,000 tokens (pre-migration)</li>
+        <li><strong>Mission:</strong> Transition to a rug-proof ecosystem with insurance and governance</li>
     </ul>
 </section>
 
 <section id="migration">
-    <h2>Migration to $NORUG</h2>
-    <p>All RUGME holders will receive $NORUG tokens on a 1:1 basis through a seamless migration process. This transition integrates RUGME into the NoRug Protocol, offering advanced rug pull protection, insurance, staking, and more.</p>
-    <p>Migration Details:</p>
+    <h2>RUGME to $NORUG Migration</h2>
+    <p>RUGME is migrating to $NORUG on a 1:1 basis, integrating holders into the NoRug Protocol’s secure ecosystem. The process is simple, transparent, and rewarding.</p>
+    <p><strong>Migration Details:</strong></p>
     <ul>
-        <li><strong>Ratio:</strong> 1:1 (1 RUGME = 1 $NORUG)</li>
-        <li><strong>Duration:</strong> 7 days starting September 15, 2025</li>
-        <li><strong>Bonus Window:</strong> First 2 days offer a 10% bonus in $NORUG for early migrators</li>
-        <li><strong>Method:</strong> Token swap via the migration contract or automatic airdrop to holders</li>
-        <li><strong>Snapshot:</strong> Taken on September 8, 2025, for airdrop eligibility</li>
+        <li><strong>Ratio:</strong> 1 RUGME = 1 $NORUG</li>
+        <li><strong>Duration:</strong> 7 days (September 15–22, 2025)</li>
+        <li><strong>Bonus:</strong> 10% extra $NORUG for swaps within first 2 days</li>
+        <li><strong>Methods:</strong> Token swap via <a href="https://www.norug.life/migrate">NoRug app</a> or automatic airdrop</li>
+        <li><strong>Snapshot:</strong> September 8, 2025, for airdrop eligibility</li>
     </ul>
-    <p>To migrate, connect your wallet to the NoRug app and approve the swap. For airdrop, hold RUGME in a compatible Solana wallet.</p>
-    <a href="https://www.norug.life/migrate" class="link-button">Start Migration</a>
-    <p>View Migration Contract: <a href="https://github.com/noruglife/Migration-contract/blob/main/migration.sol">GitHub - migration.sol</a></p>
-</section>
-
-<section id="whitepaper">
-    <h2>Whitepaper</h2>
-    <p>Read the full NoRug Protocol Whitepaper, which details the migration, features, and vision for RUGME's evolution into $NORUG.</p>
-    <a href="https://github.com/noruglife/Migration-contract/blob/main/whitepaper.md" class="link-button">View Whitepaper on GitHub</a>
-    <p>Key Excerpts:</p>
-    <ul>
-        <li>Abstract: Decentralized platform on Solana protecting against rug pulls.</li>
-        <li>Objectives: Insurance, staking, lotteries, governance.</li>
-        <li>Economic Model: $NORUG token with buyback and burn.</li>
-    </ul>
+    <p>View the migration contract: <a href="https://github.com/noruglife/Migration-contract/blob/main/migration.sol">GitHub - migration.sol</a></p>
+    <a href="https://www.norug.life/migrate" class="cta-button">Start Migration Now</a>
 </section>
 
 <section id="features">
-    <h2>Features After Migration</h2>
-    <p>Once migrated to $NORUG, enjoy:</p>
-    <ul>
-        <li><strong>Rug Pull Checker:</strong> Analyze tokens for risks like holder concentration and liquidity issues.</li>
-        <li><strong>Insurance:</strong> Protect investments with $NORUG premiums (min. 1 USDC coverage).</li>
-        <li><strong>Staking:</strong> Earn rewards (min. 100 $NORUG, 7-day lockup).</li>
-        <li><strong>Lotteries:</strong> Community-governed with Chainlink VRF (multiple tiers, min. 100 $NORUG prize).</li>
-        <li><strong>Governance:</strong> Vote on proposals (min. 10 $NORUG, 3-day periods).</li>
-        <li><strong>Oracles:</strong> Pyth for pricing, Chainlink for randomness.</li>
-    </ul>
+    <h2>Why $NORUG? Features That Protect</h2>
+    <div class="features">
+        <div class="feature-item">
+            <img src="https://via.placeholder.com/400x300?text=Rug+Pull+Checker" alt="Rug Pull Checker">
+            <h3>Rug Pull Checker</h3>
+            <p>Analyze Pump.fun tokens for risks like high holder concentration or low liquidity using our Custom Risk Oracle.</p>
+        </div>
+        <div class="feature-item">
+            <img src="https://via.placeholder.com/400x300?text=Insurance" alt="Insurance">
+            <h3>Insurance Policies</h3>
+            <p>Protect investments with $NORUG premiums (min. 1 USDC coverage, up to 90 days).</p>
+        </div>
+        <div class="feature-item">
+            <img src="https://via.placeholder.com/400x300?text=Staking" alt="Staking">
+            <h3>Staking Rewards</h3>
+            <p>Stake $NORUG (min. 100 tokens) to earn hourly rewards with a 7-day lockup.</p>
+        </div>
+        <div class="feature-item">
+            <img src="https://via.placeholder.com/400x300?text=Lotteries" alt="Lotteries">
+            <h3>Community Lotteries</h3>
+            <p>Win big with fair, Chainlink VRF-powered lotteries (50% 1st prize, min. 100 $NORUG).</p>
+        </div>
+    </div>
 </section>
 
 <section id="marketing" class="marketing">
-    <h2>Marketing & Community</h2>
-    <p>RUGME is more than a token—it's a movement against rugs! Our marketing includes:</p>
-    <ul>
-        <li>Viral memes and social campaigns on X (Twitter) and Discord.</li>
-        <li>Partnerships with Pump.fun influencers and DeFi projects.</li>
-        <li>AMAs, giveaways, and lotteries to boost engagement.</li>
-        <li>Billboard ads in crypto hubs like Miami and Singapore.</li>
-        <li>Token burns and buybacks to drive value.</li>
-    </ul>
-    <p>Join the rug-proof revolution: Hold RUGME, migrate to $NORUG, and never get rugged again!</p>
+    <h2>Why Invest in RUGME?</h2>
+    <p>RUGME isn’t just a token—it’s a movement to make DeFi safer and more rewarding. Here’s why investors love us:</p>
+    <div class="features">
+        <div class="marketing-item">
+            <img src="https://via.placeholder.com/400x300?text=Community" alt="Community">
+            <h3>Vibrant Community</h3>
+            <p>Join 10,000+ holders in our active Discord and Twitter communities, driving memes and engagement.</p>
+        </div>
+        <div class="marketing-item">
+            <img src="https://via.placeholder.com/400x300?text=Anti-Rug" alt="Anti-Rug">
+            <h3>Anti-Rug Mission</h3>
+            <p>Backed by NoRug Protocol, we protect your investments with cutting-edge risk analysis and insurance.</p>
+        </div>
+        <div class="marketing-item">
+            <img src="https://via.placeholder.com/400x300?text=Growth" alt="Growth">
+            <h3>Investment Potential</h3>
+            <p>Buybacks, burns, and lotteries boost $NORUG value, with a 1B token cap ensuring scarcity.</p>
+        </div>
+        <div class="marketing-item">
+            <img src="https://via.placeholder.com/400x300?text=Marketing" alt="Marketing">
+            <h3>Viral Marketing</h3>
+            <p>From X campaigns to global ads, our partnerships and AMAs keep RUGME trending.</p>
+        </div>
+    </div>
+    <p><strong>Don’t miss out—invest in RUGME and migrate to $NORUG for a secure DeFi future!</strong></p>
+    <a href="https://pump.fun/RUGME" class="cta-button">Invest Now</a>
 </section>
 
 <section id="links">
-    <h2>Important Links</h2>
+    <h2>Resources & Links</h2>
     <ul>
         <li><a href="https://pump.fun/RUGME">RUGME on Pump.fun</a></li>
         <li><a href="https://www.norug.life/">NoRug Protocol Website</a></li>
@@ -123,18 +172,17 @@
     </ul>
 </section>
 
-<section id="contact">
-    <h2>Contact Us</h2>
-    <p>Get in touch for partnerships, questions, or community involvement:</p>
-    <ul>
-        <li>Email: info@norug.life</li>
-        <li>Twitter: <a href="https://x.com/NoRugProtocol">@NoRugProtocol</a></li>
-        <li>Discord: <a href="https://discord.gg/norug">NoRug Protocol Community</a></li>
-    </ul>
-</section>
+<section class="cta-section" id="contact">
+    <h2>Join the Rug-Proof Revolution</h2>
+    <p>Connect with us to learn more about RUGME, $NORUG, and how we’re transforming DeFi safety.</p>
+    <p><strong>Email:</strong> info@norug.life<br>
+       <strong>Twitter:</strong> <a href="https://x.com/NoRugProtocol">@NoRugProtocol</a><br>
+       <strong>Discord:</strong> <a href="https://discord.gg/norug">NoRug Protocol Community</a></p>
+    <a href="mailto:info@norug.life" class="cta-button">Contact Us</a>
+</header>
 
 <footer>
-    <p>© 2025 RUGME / NoRug Protocol. All rights reserved.</p>
+    <p>&copy; 2025 RUGME / NoRug Protocol. All rights reserved.</p>
 </footer>
 
 </body>
