@@ -25,66 +25,75 @@
         :root {
             --primary: #1a73e8;
             --primary-dark: #005bb5;
-            --background: #f5f7fa;
+            --background: #f7fafc;
             --card-bg: #ffffff;
-            --text: #2d3748;
+            --text: #1a202c;
             --text-light: #4a5568;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            --shadow-hover: 0 6px 16px rgba(0, 0, 0, 0.15);
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 6px 16px rgba(0, 0, 0, 0.12);
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Inter', sans-serif; background-color: var(--background); color: var(--text); line-height: 1.7; }
-        header { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 40px 20px; text-align: center; position: relative; overflow: hidden; }
+        header { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: clamp(30px, 5vw, 40px) 20px; text-align: center; position: relative; overflow: hidden; }
         header::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(255,255,255,0.1), transparent); }
-        .logo { width: clamp(160px, 15vw, 220px); height: clamp(160px, 15vw, 220px); margin: 0 auto; }
+        .logo { width: clamp(160px, 15vw, 200px); height: clamp(160px, 15vw, 200px); margin: 0 auto; }
         .logo img { width: 100%; height: 100%; object-fit: contain; }
-        header .tagline { margin: 20px 0; max-width: 700px; font-size: clamp(1.1em, 2.5vw, 1.3em); font-weight: 300; }
-        .cta-button { display: inline-block; padding: 14px 30px; background-color: #fff; color: var(--primary); text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease; box-shadow: var(--shadow); }
-        .cta-button:hover { background-color: #e6f1ff; transform: translateY(-3px); box-shadow: var(--shadow-hover); }
-        nav { background-color: var(--card-bg); padding: 15px 0; box-shadow: var(--shadow); position: sticky; top: 0; z-index: 100; }
-        nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
-        nav ul li a { color: var(--text); text-decoration: none; font-weight: 500; padding: 10px 20px; transition: color 0.3s ease, background-color 0.3s ease; border-radius: 6px; }
+        header .tagline { margin: 20px auto; max-width: 700px; font-size: clamp(1.1em, 2.5vw, 1.3em); font-weight: 300; }
+        .cta-button { display: inline-block; padding: 12px 28px; background-color: #fff; color: var(--primary); text-decoration: none; border-radius: 8px; font-weight: 600; font-size: clamp(0.9em, 2vw, 1em); transition: all 0.3s ease; box-shadow: var(--shadow); }
+        .cta-button:hover { background: linear-gradient(to right, #e6f1ff, #dfe9ff); transform: scale(1.05); box-shadow: var(--shadow-hover); }
+        nav { background-color: var(--card-bg); padding: 12px 0; box-shadow: var(--shadow); position: sticky; top: 0; z-index: 100; }
+        nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: clamp(15px, 2vw, 20px); max-width: 1200px; margin: 0 auto; }
+        nav ul li a { color: var(--text); text-decoration: none; font-weight: 500; padding: 8px 16px; font-size: clamp(0.9em, 2vw, 1em); transition: all 0.3s ease; border-radius: 6px; }
         nav ul li a:hover { color: var(--primary); background-color: rgba(26, 115, 232, 0.1); }
-        .nav-toggle { display: none; font-size: 1.5em; cursor: pointer; padding: 10px; color: var(--text); }
+        .nav-toggle { display: none; font-size: 1.5em; cursor: pointer; padding: 10px; color: var(--text); text-align: center; }
         details[open] .nav-toggle { color: var(--primary); }
         details summary { list-style: none; }
         details ul { display: none; }
-        details[open] ul { display: flex; flex-direction: column; align-items: center; padding: 10px 0; }
-        section { padding: 50px 20px; max-width: 1280px; margin: 0 auto 30px; background: var(--card-bg); border-radius: 12px; box-shadow: var(--shadow); }
-        h1, h2 { color: var(--primary); font-weight: 700; }
+        details[open] ul { display: flex; flex-direction: column; align-items: center; padding: 10px 0; gap: 10px; }
+        section { padding: clamp(30px, 5vw, 50px) 20px; max-width: 1280px; margin: 0 auto 30px; background: var(--card-bg); border-radius: 12px; box-shadow: var(--shadow); }
+        h1, h2 { color: var(--primary); font-weight: 600; }
         h1 { font-size: clamp(2em, 5vw, 2.5em); margin-bottom: 20px; }
         h2 { font-size: clamp(1.6em, 4vw, 2em); margin-bottom: 15px; }
-        p, li { color: var(--text-light); font-size: clamp(1em, 2.5vw, 1.1em); }
-        .contract-address { word-break: break-all; font-family: monospace; background: #f0f0f0; padding: 5px 10px; border-radius: 4px; display: inline-block; max-width: 100%; }
-        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; text-align: center; padding: 30px; border-radius: 12px; box-shadow: var(--shadow); margin: 20px 0; }
+        p, li { color: var(--text-light); font-size: clamp(0.95em, 2.5vw, 1.05em); font-weight: 400; }
+        .contract-address { word-break: break-all; font-family: monospace; background: #edf2f7; padding: 6px 12px; border-radius: 6px; display: inline-block; max-width: 100%; font-size: clamp(0.8em, 2vw, 0.9em); }
+        ul { list-style: none; padding-left: 0; max-width: 100%; overflow-wrap: break-word; }
+        ul li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+        ul li::before { content: '•'; color: var(--primary); position: absolute; left: 0; font-size: 1.2em; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 20px; text-align: center; padding: 30px; border-radius: 12px; box-shadow: var(--shadow); margin: 20px 0; }
         .stat-item h3 { font-size: clamp(1.8em, 4vw, 2em); color: var(--primary); margin: 0; }
-        .stat-item p { font-size: 1em; margin: 5px 0; color: var(--text-light); }
-        .features, .marketing { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .feature-item, .marketing-item { background: var(--card-bg); border-radius: 12px; padding: 25px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: var(--shadow); }
-        .feature-item:hover, .marketing-item:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
-        .icon-container { font-size: 2.8em; color: var(--primary); background: linear-gradient(to right, #e6f1ff, #ffffff); width: 80px; height: 80px; line-height: 80px; border-radius: 50%; margin: 0 auto 20px; transition: all 0.3s ease; }
+        .stat-item p { font-size: clamp(0.9em, 2vw, 1em); margin: 5px 0; color: var(--text-light); }
+        .features, .marketing { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+        .feature-item, .marketing-item { background: var(--card-bg); border-radius: 12px; padding: 20px; text-align: center; transition: all 0.3s ease; box-shadow: var(--shadow); }
+        .feature-item:hover, .marketing-item:hover { transform: scale(1.03); box-shadow: var(--shadow-hover); }
+        .icon-container { font-size: clamp(2.2em, 5vw, 2.5em); color: var(--primary); background: linear-gradient(to right, #e6f1ff, #ffffff); width: 70px; height: 70px; line-height: 70px; border-radius: 50%; margin: 0 auto 15px; transition: all 0.3s ease; }
         .feature-item:hover .icon-container, .marketing-item:hover .icon-container { background: linear-gradient(to right, var(--primary), var(--primary-dark)); color: #fff; }
-        .feature-item h3, .marketing-item h3 { color: var(--primary); font-size: clamp(1.5em, 3vw, 1.7em); margin-bottom: 10px; }
+        .feature-item h3, .marketing-item h3 { color: var(--primary); font-size: clamp(1.4em, 3vw, 1.6em); margin-bottom: 10px; font-weight: 600; }
         .cta-section { text-align: center; background: linear-gradient(to right, #e6f1ff, #dfe9ff); padding: 40px; border-radius: 12px; margin: 30px 0; box-shadow: var(--shadow); }
         .cta-section h2 { font-size: clamp(1.8em, 4vw, 2em); }
-        footer { background-color: var(--text); color: white; text-align: center; padding: 20px; font-size: 0.9em; }
-        #dexscreener-embed { position: relative; width: 100%; padding-bottom: 65%; margin: 20px 0; border-radius: 8px; overflow: hidden; }
+        .cta-section p { margin-bottom: 20px; }
+        .contact-links { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+        .contact-links a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        .contact-links a:hover { text-decoration: underline; }
+        footer { background-color: #1a202c; color: #fff; text-align: center; padding: 25px; font-size: clamp(0.85em, 2vw, 0.95em); box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); }
+        #dexscreener-embed { position: relative; width: 100%; padding-bottom: clamp(50%, 10vw, 65%); margin: 20px 0; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow); }
         #dexscreener-embed iframe { position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: 0; }
         @media (max-width: 768px) {
             header { padding: 20px; }
-            nav { padding: 10px 0; }
-            .nav-toggle { display: block; text-align: center; }
-            nav ul { display: none; flex-direction: column; gap: 10px; }
+            nav { padding: 8px 0; }
+            .nav-toggle { display: block; }
+            nav ul { display: none; flex-direction: column; gap: 8px; }
             details[open] ul { display: flex; }
-            section { padding: 30px 15px; margin: 0 10px 20px; }
+            section { padding: 25px 15px; margin: 0 10px 20px; }
             .stats { grid-template-columns: 1fr; padding: 20px; }
-            .features, .marketing { gap: 20px; }
-            #dexscreener-embed { padding-bottom: 125%; }
-            .contract-address { font-size: 0.9em; }
+            .features, .marketing { gap: 15px; }
+            .contract-address { font-size: 0.85em; }
+            #dexscreener-embed { padding-bottom: 100%; }
+            .cta-section { padding: 30px 15px; }
         }
         @media (min-width: 1200px) {
-            section { padding: 70px 30px; }
+            section { padding: 60px 30px; }
             .stats { padding: 40px; }
+            nav ul { gap: 25px; }
         }
     </style>
 </head>
@@ -141,9 +150,9 @@
     <p>Launched on Pump.fun, RUGME is a community-driven token that started as a playful jab at DeFi rug pulls. With a massive following and viral marketing, it’s now evolving into $NORUG, the backbone of the NoRug Protocol. Built on Solana, $NORUG offers advanced features to protect investors, making RUGME a smart choice for DeFi enthusiasts.</p>
     <p><strong>Key Details:</strong></p>
     <ul>
-        <li><strong>Platform:</strong> Solana via Pump.fun</li>
-        <li><strong>Supply:</strong> 1,000,000,000 tokens (pre-migration)</li>
-        <li><strong>Mission:</strong> Transition to a rug-proof ecosystem with insurance and governance</li>
+        <li>Platform: Solana via Pump.fun</li>
+        <li>Supply: 1,000,000,000 tokens (pre-migration)</li>
+        <li>Mission: Transition to a rug-proof ecosystem with insurance and governance</li>
     </ul>
 </section>
 
@@ -152,11 +161,11 @@
     <p>RUGME is migrating to $NORUG on a 1:1 basis, integrating holders into the NoRug Protocol’s secure ecosystem. The process is simple, transparent, and rewarding.</p>
     <p><strong>Migration Details:</strong></p>
     <ul>
-        <li><strong>Ratio:</strong> 1 RUGME = 1 $NORUG</li>
-        <li><strong>Duration:</strong> 7 days (October 15–22, 2025)</li>
-        <li><strong>Bonus:</strong> 10% extra $NORUG for swaps within first 2 days</li>
-        <li><strong>Methods:</strong> Token swap via <a href="https://www.norug.life/migrate">NoRug app</a> or automatic airdrop</li>
-        <li><strong>Snapshot:</strong> October 30, 2025, for airdrop eligibility</li>
+        <li>Ratio: 1 RUGME = 1 $NORUG</li>
+        <li>Duration: 7 days (October 15–22, 2025)</li>
+        <li>Bonus: 10% extra $NORUG for swaps within first 2 days</li>
+        <li>Methods: Token swap via <a href="https://www.norug.life/migrate">NoRug app</a> or automatic airdrop</li>
+        <li>Snapshot: October 30, 2025, for airdrop eligibility</li>
     </ul>
     <p>View the migration contract: <a href="https://github.com/noruglife/Migration-contract/blob/main/migration.sol">GitHub - migration.sol</a></p>
     <a href="https://www.norug.life/migrate" class="cta-button">Start Migration Now</a>
@@ -232,9 +241,11 @@
 <section class="cta-section" id="contact">
     <h2>Join the Rug-Proof Revolution</h2>
     <p>Connect with us to learn more about RUGME, $NORUG, and how we’re transforming DeFi safety.</p>
-    <p><strong>Email:</strong> info@norug.life<br>
-       <strong>Twitter:</strong> <a href="https://x.com/NoRugProtocol">@NoRugProtocol</a><br>
-       <strong>Telegram:</strong> <a href="https://t.me/norugprotocol">norugprotocol</a></p>
+    <div class="contact-links">
+        <p><strong>Email:</strong> <a href="mailto:info@norug.life">info@norug.life</a></p>
+        <p><strong>Twitter:</strong> <a href="https://x.com/NoRugProtocol">@NoRugProtocol</a></p>
+        <p><strong>Telegram:</strong> <a href="https://t.me/norugprotocol">norugprotocol</a></p>
+    </div>
     <a href="mailto:info@norug.life" class="cta-button">Contact Us</a>
 </section>
 
