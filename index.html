@@ -20,6 +20,7 @@
     <meta name="twitter:description" content="Invest in RUGME, a rug-proof token on Pump.fun, migrating to $NORUG with DeFi security features like staking and insurance.">
     <meta name="twitter:image" content="https://i.ibb.co/3YTfWhnD/88-C26570-A90-B-4073-B87-D-0396-FDE0-C195.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #1a73e8;
@@ -31,60 +32,59 @@
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             --shadow-hover: 0 6px 16px rgba(0, 0, 0, 0.15);
         }
-        * { box-sizing: border-box; }
-        body { font-family: 'Inter', system-ui, -apple-system, Arial, sans-serif; margin: 0; padding: 0; background-color: var(--background); color: var(--text); line-height: 1.7; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--background); color: var(--text); line-height: 1.7; }
         header { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 40px 20px; text-align: center; position: relative; overflow: hidden; }
         header::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(255,255,255,0.1), transparent); }
-        .logo { width: 220px; height: 220px; margin: 0 auto; }
+        .logo { width: clamp(160px, 15vw, 220px); height: clamp(160px, 15vw, 220px); margin: 0 auto; }
         .logo img { width: 100%; height: 100%; object-fit: contain; }
-        header .tagline { margin: 20px 0; max-width: 700px; font-size: 1.3em; font-weight: 300; }
+        header .tagline { margin: 20px 0; max-width: 700px; font-size: clamp(1.1em, 2.5vw, 1.3em); font-weight: 300; }
         .cta-button { display: inline-block; padding: 14px 30px; background-color: #fff; color: var(--primary); text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease; box-shadow: var(--shadow); }
         .cta-button:hover { background-color: #e6f1ff; transform: translateY(-3px); box-shadow: var(--shadow-hover); }
-        nav { background-color: var(--card-bg); padding: 15px 0; box-shadow: var(--shadow); }
-        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
-        nav ul li a { color: var(--text); text-decoration: none; font-weight: 500; padding: 10px 20px; transition: color 0.3s ease; }
-        nav ul li a:hover { color: var(--primary); }
+        nav { background-color: var(--card-bg); padding: 15px 0; box-shadow: var(--shadow); position: sticky; top: 0; z-index: 100; }
+        nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
+        nav ul li a { color: var(--text); text-decoration: none; font-weight: 500; padding: 10px 20px; transition: color 0.3s ease, background-color 0.3s ease; border-radius: 6px; }
+        nav ul li a:hover { color: var(--primary); background-color: rgba(26, 115, 232, 0.1); }
         .nav-toggle { display: none; font-size: 1.5em; cursor: pointer; padding: 10px; color: var(--text); }
         details[open] .nav-toggle { color: var(--primary); }
         details summary { list-style: none; }
         details ul { display: none; }
         details[open] ul { display: flex; flex-direction: column; align-items: center; padding: 10px 0; }
-        section { padding: 50px 20px; max-width: 1280px; margin: 0 auto; background: var(--card-bg); border-radius: 12px; box-shadow: var(--shadow); margin-bottom: 30px; }
+        section { padding: 50px 20px; max-width: 1280px; margin: 0 auto 30px; background: var(--card-bg); border-radius: 12px; box-shadow: var(--shadow); }
         h1, h2 { color: var(--primary); font-weight: 700; }
-        h1 { font-size: 2.5em; margin-bottom: 20px; }
-        h2 { font-size: 2em; margin-bottom: 15px; }
-        p, li { color: var(--text-light); font-size: 1.1em; }
-        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; text-align: center; background: var(--card-bg); border-radius: 12px; padding: 30px; box-shadow: var(--shadow); margin: 20px 0; }
-        .stat-item h3 { font-size: 2em; color: var(--primary); margin: 0; }
+        h1 { font-size: clamp(2em, 5vw, 2.5em); margin-bottom: 20px; }
+        h2 { font-size: clamp(1.6em, 4vw, 2em); margin-bottom: 15px; }
+        p, li { color: var(--text-light); font-size: clamp(1em, 2.5vw, 1.1em); }
+        .contract-address { word-break: break-all; font-family: monospace; background: #f0f0f0; padding: 5px 10px; border-radius: 4px; display: inline-block; max-width: 100%; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; text-align: center; padding: 30px; border-radius: 12px; box-shadow: var(--shadow); margin: 20px 0; }
+        .stat-item h3 { font-size: clamp(1.8em, 4vw, 2em); color: var(--primary); margin: 0; }
         .stat-item p { font-size: 1em; margin: 5px 0; color: var(--text-light); }
         .features, .marketing { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         .feature-item, .marketing-item { background: var(--card-bg); border-radius: 12px; padding: 25px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: var(--shadow); }
         .feature-item:hover, .marketing-item:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
         .icon-container { font-size: 2.8em; color: var(--primary); background: linear-gradient(to right, #e6f1ff, #ffffff); width: 80px; height: 80px; line-height: 80px; border-radius: 50%; margin: 0 auto 20px; transition: all 0.3s ease; }
         .feature-item:hover .icon-container, .marketing-item:hover .icon-container { background: linear-gradient(to right, var(--primary), var(--primary-dark)); color: #fff; }
-        .feature-item h3, .marketing-item h3 { color: var(--primary); font-size: 1.7em; margin-bottom: 10px; }
+        .feature-item h3, .marketing-item h3 { color: var(--primary); font-size: clamp(1.5em, 3vw, 1.7em); margin-bottom: 10px; }
         .cta-section { text-align: center; background: linear-gradient(to right, #e6f1ff, #dfe9ff); padding: 40px; border-radius: 12px; margin: 30px 0; box-shadow: var(--shadow); }
-        .cta-section h2 { font-size: 2em; }
+        .cta-section h2 { font-size: clamp(1.8em, 4vw, 2em); }
         footer { background-color: var(--text); color: white; text-align: center; padding: 20px; font-size: 0.9em; }
-        #dexscreener-embed { position: relative; width: 100%; padding-bottom: 65%; margin: 20px 0; }
-        #dexscreener-embed iframe { position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: 0; border-radius: 8px; }
+        #dexscreener-embed { position: relative; width: 100%; padding-bottom: 65%; margin: 20px 0; border-radius: 8px; overflow: hidden; }
+        #dexscreener-embed iframe { position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: 0; }
         @media (max-width: 768px) {
             header { padding: 20px; }
-            .logo { width: 160px; height: 160px; }
-            header .tagline { font-size: 1.1em; }
-            .nav-toggle { display: block; }
-            nav ul { display: none; }
+            nav { padding: 10px 0; }
+            .nav-toggle { display: block; text-align: center; }
+            nav ul { display: none; flex-direction: column; gap: 10px; }
             details[open] ul { display: flex; }
-            section { padding: 30px 15px; }
-            h1 { font-size: 2em; }
-            h2 { font-size: 1.6em; }
-            .stats { grid-template-columns: 1fr; }
+            section { padding: 30px 15px; margin: 0 10px 20px; }
+            .stats { grid-template-columns: 1fr; padding: 20px; }
+            .features, .marketing { gap: 20px; }
             #dexscreener-embed { padding-bottom: 125%; }
+            .contract-address { font-size: 0.9em; }
         }
         @media (min-width: 1200px) {
             section { padding: 70px 30px; }
             .stats { padding: 40px; }
-            .stat-item { min-width: 200px; }
         }
     </style>
 </head>
@@ -99,8 +99,8 @@
 </header>
 
 <nav>
-    <details class="nav-toggle">
-        <summary><i class="fas fa-bars"></i></summary>
+    <details>
+        <summary class="nav-toggle"><i class="fas fa-bars"></i></summary>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About RUGME</a></li>
@@ -116,7 +116,7 @@
 <section id="home">
     <h1>RUGME - Rug-Proof Token on Pump.fun</h1>
     <p>RUGME is a vibrant meme token launched on Pump.fun, designed to tackle the DeFi world’s rug pull problem with humor and community spirit. As we migrate to $NORUG on the NoRug Protocol, RUGME holders gain access to cutting-edge rug pull protection, insurance, staking, and more. Invest in RUGME today and join a movement to make DeFi safer!</p>
-    <p><strong>Token Contract Address:</strong> (8T9CTBV3BjKiHTvuxqKWF3sR2UKsxBjr5xh3juT8DfXc)</p>
+    <p><strong>Token Contract Address:</strong> <span class="contract-address">8T9CTBV3BjKiHTvuxqKWF3sR2UKsxBjr5xh3juT8DfXc</span></p>
     <a href="https://www.norug.life/migrate" class="cta-button">Migrate to $NORUG</a>
 </section>
 
