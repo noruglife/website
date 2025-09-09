@@ -21,57 +21,68 @@
     <meta name="twitter:image" content="https://i.ibb.co/3YTfWhnD/88-C26570-A90-B-4073-B87-D-0396-FDE0-C195.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        body { font-family: system-ui, -apple-system, Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; color: #333; line-height: 1.6; }
-        header { background: linear-gradient(to right, #0070f3, #005bb5); color: white; padding: 20px; display: flex; flex-direction: column; align-items: center; position: relative; }
-        .logo { width: 200px; height: 200px; }
+        :root {
+            --primary: #1a73e8;
+            --primary-dark: #005bb5;
+            --background: #f5f7fa;
+            --card-bg: #ffffff;
+            --text: #2d3748;
+            --text-light: #4a5568;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+        * { box-sizing: border-box; }
+        body { font-family: 'Inter', system-ui, -apple-system, Arial, sans-serif; margin: 0; padding: 0; background-color: var(--background); color: var(--text); line-height: 1.7; }
+        header { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 40px 20px; text-align: center; position: relative; overflow: hidden; }
+        header::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(255,255,255,0.1), transparent); }
+        .logo { width: 220px; height: 220px; margin: 0 auto; }
         .logo img { width: 100%; height: 100%; object-fit: contain; }
-        header .tagline { margin: 20px 0; max-width: 600px; font-size: 1.2em; }
-        .cta-button { display: inline-block; padding: 12px 25px; background-color: #fff; color: #0070f3; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s, transform 0.3s; }
-        .cta-button:hover { background-color: #e6f1ff; transform: translateY(-2px); }
-        nav { background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); padding: 10px 0; }
-        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
-        nav ul li { margin: 0; }
-        nav ul li a { color: #333; text-decoration: none; font-weight: 600; padding: 8px 15px; transition: color 0.3s; }
-        nav ul li a:hover { color: #0070f3; }
-        .nav-toggle { display: none; font-size: 1.5em; cursor: pointer; padding: 10px; }
-        details[open] .nav-toggle { color: #0070f3; }
+        header .tagline { margin: 20px 0; max-width: 700px; font-size: 1.3em; font-weight: 300; }
+        .cta-button { display: inline-block; padding: 14px 30px; background-color: #fff; color: var(--primary); text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease; box-shadow: var(--shadow); }
+        .cta-button:hover { background-color: #e6f1ff; transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+        nav { background-color: var(--card-bg); padding: 15px 0; box-shadow: var(--shadow); }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
+        nav ul li a { color: var(--text); text-decoration: none; font-weight: 500; padding: 10px 20px; transition: color 0.3s ease; }
+        nav ul li a:hover { color: var(--primary); }
+        .nav-toggle { display: none; font-size: 1.5em; cursor: pointer; padding: 10px; color: var(--text); }
+        details[open] .nav-toggle { color: var(--primary); }
         details summary { list-style: none; }
         details ul { display: none; }
         details[open] ul { display: flex; flex-direction: column; align-items: center; padding: 10px 0; }
-        section { padding: 40px 15px; max-width: 1200px; margin: 0 auto; }
-        .stats { display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; background: #fff; border-radius: 10px; padding: 30px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin: 20px 0; }
-        .stat-item { flex: 1; min-width: 150px; margin: 10px; }
-        .stat-item h3 { font-size: 1.8em; color: #0070f3; margin: 0; }
-        .stat-item p { font-size: 1em; margin: 5px 0; }
-        .features, .marketing { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; }
-        .feature-item, .marketing-item { flex: 1 1 45%; min-width: 250px; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s; }
-        .feature-item:hover, .marketing-item:hover { transform: translateY(-5px); }
-        .icon-container { font-size: 2.5em; color: #0070f3; background: linear-gradient(to right, #e6f1ff, #ffffff); width: 70px; height: 70px; line-height: 70px; border-radius: 50%; margin: 0 auto 15px; transition: background 0.3s; }
-        .feature-item:hover .icon-container, .marketing-item:hover .icon-container { background: linear-gradient(to right, #0070f3, #005bb5); color: #fff; }
-        .feature-item h3, .marketing-item h3 { color: #0070f3; font-size: 1.6em; }
-        .cta-section { text-align: center; background: #e6f1ff; padding: 30px; border-radius: 10px; margin: 30px 0; }
-        .cta-section h2 { color: #0070f3; font-size: 1.8em; }
-        footer { background-color: #333; color: white; text-align: center; padding: 15px; font-size: 0.9em; }
-        #dexscreener-embed{position:relative;width:100%;padding-bottom:125%;}@media(min-width:1400px){#dexscreener-embed{padding-bottom:65%;}}#dexscreener-embed iframe{position:absolute;width:100%;height:100%;top:0;left:0;border:0;}
-        body { background-color: #ffffff; }
-        section { box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-radius: 8px; background: #fafafa; }
-        .cta-button { box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .cta-button:hover { box-shadow: 0 6px 8px rgba(0,0,0,0.15); }
+        section { padding: 50px 20px; max-width: 1280px; margin: 0 auto; background: var(--card-bg); border-radius: 12px; box-shadow: var(--shadow); margin-bottom: 30px; }
+        h1, h2 { color: var(--primary); font-weight: 700; }
+        h1 { font-size: 2.5em; margin-bottom: 20px; }
+        h2 { font-size: 2em; margin-bottom: 15px; }
+        p, li { color: var(--text-light); font-size: 1.1em; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; text-align: center; background: var(--card-bg); border-radius: 12px; padding: 30px; box-shadow: var(--shadow); margin: 20px 0; }
+        .stat-item h3 { font-size: 2em; color: var(--primary); margin: 0; }
+        .stat-item p { font-size: 1em; margin: 5px 0; color: var(--text-light); }
+        .features, .marketing { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .feature-item, .marketing-item { background: var(--card-bg); border-radius: 12px; padding: 25px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: var(--shadow); }
+        .feature-item:hover, .marketing-item:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+        .icon-container { font-size: 2.8em; color: var(--primary); background: linear-gradient(to right, #e6f1ff, #ffffff); width: 80px; height: 80px; line-height: 80px; border-radius: 50%; margin: 0 auto 20px; transition: all 0.3s ease; }
+        .feature-item:hover .icon-container, .marketing-item:hover .icon-container { background: linear-gradient(to right, var(--primary), var(--primary-dark)); color: #fff; }
+        .feature-item h3, .marketing-item h3 { color: var(--primary); font-size: 1.7em; margin-bottom: 10px; }
+        .cta-section { text-align: center; background: linear-gradient(to right, #e6f1ff, #dfe9ff); padding: 40px; border-radius: 12px; margin: 30px 0; box-shadow: var(--shadow); }
+        .cta-section h2 { font-size: 2em; }
+        footer { background-color: var(--text); color: white; text-align: center; padding: 20px; font-size: 0.9em; }
+        #dexscreener-embed { position: relative; width: 100%; padding-bottom: 65%; margin: 20px 0; }
+        #dexscreener-embed iframe { position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: 0; border-radius: 8px; }
         @media (max-width: 768px) {
-            header { padding: 15px; }
-            .logo { width: 150px; height: 150px; }
-            header .tagline { font-size: 1em; margin: 15px 0; }
+            header { padding: 20px; }
+            .logo { width: 160px; height: 160px; }
+            header .tagline { font-size: 1.1em; }
             .nav-toggle { display: block; }
             nav ul { display: none; }
             details[open] ul { display: flex; }
-            nav { padding: 5px 0; }
-            .stats { padding: 20px; }
-            .stat-item { min-width: 120px; }
-            .feature-item, .marketing-item { flex: 1 1 100%; }
-            section { padding: 20px 10px; }
+            section { padding: 30px 15px; }
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.6em; }
+            .stats { grid-template-columns: 1fr; }
+            #dexscreener-embed { padding-bottom: 125%; }
         }
         @media (min-width: 1200px) {
-            section { padding: 60px 20px; }
+            section { padding: 70px 30px; }
             .stats { padding: 40px; }
             .stat-item { min-width: 200px; }
         }
@@ -120,10 +131,6 @@
         <p>Total $NORUG Supply</p>
     </div>
     <div class="stat-item">
-        <h3>10,000+</h3>
-        <p>Community Holders</p>
-    </div>
-    <div class="stat-item">
         <h3>7 Days</h3>
         <p>Migration Period</p>
     </div>
@@ -146,10 +153,10 @@
     <p><strong>Migration Details:</strong></p>
     <ul>
         <li><strong>Ratio:</strong> 1 RUGME = 1 $NORUG</li>
-        <li><strong>Duration:</strong> 7 days (September 15–22, 2025)</li>
+        <li><strong>Duration:</strong> 7 days (October 15–22, 2025)</li>
         <li><strong>Bonus:</strong> 10% extra $NORUG for swaps within first 2 days</li>
         <li><strong>Methods:</strong> Token swap via <a href="https://www.norug.life/migrate">NoRug app</a> or automatic airdrop</li>
-        <li><strong>Snapshot:</strong> September 30, 2025, for airdrop eligibility</li>
+        <li><strong>Snapshot:</strong> October 30, 2025, for airdrop eligibility</li>
     </ul>
     <p>View the migration contract: <a href="https://github.com/noruglife/Migration-contract/blob/main/migration.sol">GitHub - migration.sol</a></p>
     <a href="https://www.norug.life/migrate" class="cta-button">Start Migration Now</a>
@@ -188,7 +195,7 @@
         <div class="marketing-item">
             <div class="icon-container"><i class="fas fa-users" alt="Vibrant Community Icon"></i></div>
             <h3>Vibrant Community</h3>
-            <p>Join 10,000+ holders in our active Telegram and Twitter communities, driving memes and engagement.</p>
+            <p>Join our active Telegram and Twitter communities, driving memes and engagement.</p>
         </div>
         <div class="marketing-item">
             <div class="icon-container"><i class="fas fa-lock" alt="Anti-Rug Mission Icon"></i></div>
